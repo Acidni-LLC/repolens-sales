@@ -1,0 +1,82 @@
+---
+// Features section for RepoLens
+const features = [
+  {
+    name: 'Intelligent Manifest Detection',
+    description: 'Automatically discovers and classifies 20+ manifest types — Dockerfiles, GitHub Actions, Terraform, Helm charts, Kubernetes YAML, API schemas, and more.',
+    icon: '🔍',
+    highlight: '95%+ detection accuracy',
+  },
+  {
+    name: 'PR-Integrated Review Context',
+    description: 'Surface infrastructure changes directly in pull requests. Reviewers see manifest impacts alongside code diffs for faster, more informed reviews.',
+    icon: '📋',
+    highlight: '30% faster infra reviews',
+  },
+  {
+    name: 'Repository Architecture Maps',
+    description: 'Visualize how manifests connect across your repo — CI/CD triggers, container dependencies, deployment flows, and config inheritance chains.',
+    icon: '🗺️',
+    highlight: 'Understand repos in <5 min',
+  },
+  {
+    name: 'AI-Enhanced Analysis',
+    description: 'Integrates with M365 Copilot and GitHub Copilot as a declarative agent. Ask natural language questions about any repository\'s infrastructure.',
+    icon: '🤖',
+    highlight: 'Copilot-native integration',
+  },
+  {
+    name: 'Cross-Repo Manifest Discovery',
+    description: 'Search and compare manifests across your entire organization. Find configuration drift, standardization opportunities, and reuse patterns.',
+    icon: '🔗',
+    highlight: 'Org-wide visibility',
+  },
+  {
+    name: 'Security-First Design',
+    description: 'Zero data persistence — RepoLens reads your repos on-demand via GitHub OAuth with minimal scopes. No code is stored. SOC 2 compliance ready.',
+    icon: '🔒',
+    highlight: 'Zero data retention',
+  },
+];
+---
+
+<section id="features" class="py-20 sm:py-28 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+        Everything you need to review infrastructure with confidence
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        RepoLens gives engineering teams deep visibility into the manifests that define how applications are built, deployed, and operated.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature) => (
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div class="flex items-start space-x-4">
+            <span class="text-3xl flex-shrink-0">{feature.icon}</span>
+            <div>
+              <div class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent-500/10 text-accent-600 mb-2">
+                {feature.highlight}
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900">{feature.name}</h3>
+              <p class="mt-2 text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Callout -->
+    <div class="mt-16 text-center">
+      <div class="inline-flex items-center px-6 py-3 rounded-full bg-primary-50 border border-primary-100">
+        <span class="text-primary-700 font-medium text-sm">
+          🚀 Supports GitHub Actions, Docker, Kubernetes, Terraform, Bicep, Helm, OpenAPI, and more
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

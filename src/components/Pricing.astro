@@ -1,0 +1,167 @@
+---
+// Pricing section for RepoLens — plans from Azure Marketplace
+const tiers = [
+  {
+    name: 'Free',
+    price: '$0',
+    period: '/month',
+    description: 'Try RepoLens on personal projects',
+    featured: false,
+    features: [
+      'Up to 3 repositories',
+      '1 user seat',
+      '20+ manifest types detected',
+      'Basic repository analysis',
+      'GitHub OAuth integration',
+      'Community support',
+    ],
+    cta: 'Start Free',
+    ctaLink: 'https://repolens.acidni.net/signup',
+  },
+  {
+    name: 'Starter',
+    price: '$29',
+    period: '/month',
+    description: 'For small teams shipping fast',
+    featured: false,
+    features: [
+      'Up to 25 repositories',
+      'Up to 5 users',
+      'PR review integration',
+      'Cross-repo manifest search',
+      'Architecture visualizations',
+      'Email support',
+    ],
+    cta: 'Start Free Trial',
+    ctaLink: 'https://repolens.acidni.net/signup?plan=starter',
+  },
+  {
+    name: 'Professional',
+    price: '$149',
+    period: '/month',
+    description: 'For growing engineering orgs',
+    featured: true,
+    features: [
+      'Up to 100 repositories',
+      'Up to 25 users',
+      'AI Copilot integration',
+      'Advanced analytics & reports',
+      'API access',
+      'Data export',
+      'Priority support',
+      'SSO (Entra ID)',
+    ],
+    cta: 'Start Free Trial',
+    ctaLink: 'https://repolens.acidni.net/signup?plan=professional',
+  },
+  {
+    name: 'Enterprise',
+    price: '$499',
+    period: '/month',
+    description: 'For large-scale organizations',
+    featured: false,
+    features: [
+      'Up to 1,000 repositories',
+      'Unlimited users',
+      'Dedicated account manager',
+      'Custom integrations',
+      'SOC 2 compliance support',
+      'SLA guarantee (99.9%)',
+      'On-call support',
+      'Volume discounts available',
+    ],
+    cta: 'Contact Sales',
+    ctaLink: 'mailto:sales@acidni.net?subject=RepoLens%20Enterprise',
+  },
+];
+---
+
+<section id="pricing" class="py-20 sm:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">
+        Simple, transparent pricing
+      </h2>
+      <p class="mt-4 text-lg text-gray-600">
+        Start free with 3 repos. Scale as your team grows. No hidden fees.
+      </p>
+    </div>
+
+    <!-- Pricing Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {tiers.map((tier) => (
+        <div
+          class={`relative rounded-2xl p-8 flex flex-col ${
+            tier.featured
+              ? 'bg-primary-600 text-white shadow-xl ring-2 ring-primary-600 scale-105'
+              : 'bg-white text-gray-900 shadow-sm border border-gray-200'
+          }`}
+        >
+          {tier.featured && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="inline-flex items-center px-4 py-1 rounded-full bg-accent-500 text-white text-xs font-bold uppercase tracking-wide">
+                Most Popular
+              </span>
+            </div>
+          )}
+
+          <div>
+            <h3 class={`text-lg font-semibold ${tier.featured ? 'text-white' : 'text-gray-900'}`}>
+              {tier.name}
+            </h3>
+            <div class="mt-4 flex items-baseline">
+              <span class={`text-4xl font-bold ${tier.featured ? 'text-white' : 'text-gray-900'}`}>
+                {tier.price}
+              </span>
+              <span class={`ml-1 text-sm ${tier.featured ? 'text-primary-200' : 'text-gray-500'}`}>
+                {tier.period}
+              </span>
+            </div>
+            <p class={`mt-2 text-sm ${tier.featured ? 'text-primary-100' : 'text-gray-500'}`}>
+              {tier.description}
+            </p>
+          </div>
+
+          <ul class="mt-8 space-y-3 flex-1">
+            {tier.features.map((feature) => (
+              <li class="flex items-start">
+                <svg
+                  class={`h-5 w-5 flex-shrink-0 ${tier.featured ? 'text-accent-500' : 'text-accent-500'}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class={`ml-3 text-sm ${tier.featured ? 'text-primary-100' : 'text-gray-600'}`}>
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={tier.ctaLink}
+            class={`mt-8 block w-full text-center px-6 py-3 rounded-lg text-sm font-semibold transition-colors ${
+              tier.featured
+                ? 'bg-white text-primary-700 hover:bg-primary-50'
+                : 'bg-primary-600 text-white hover:bg-primary-700'
+            }`}
+          >
+            {tier.cta}
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <!-- FAQ / Extra Info -->
+    <div class="mt-16 text-center">
+      <p class="text-gray-500 text-sm">
+        All plans include a 14-day free trial. No credit card required to start.
+        <br />
+        Need more than 1,000 repos? <a href="mailto:sales@acidni.net" class="text-primary-600 font-medium hover:underline">Contact us</a> for volume pricing.
+      </p>
+    </div>
+  </div>
+</section>

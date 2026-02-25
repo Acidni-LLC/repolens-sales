@@ -1,0 +1,25 @@
+{
+  "name": "repolens-sales",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.5.0",
+    "@astrojs/check": "^0.5.0",
+    "@astrojs/tailwind": "^5.1.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/forms": "^0.5.7",
+    "prettier": "^3.2.0",
+    "prettier-plugin-astro": "^0.13.0"
+  }
+}

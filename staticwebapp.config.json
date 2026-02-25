@@ -1,0 +1,35 @@
+{
+  "routes": [
+    {
+      "route": "/app",
+      "redirect": "https://repolens.acidni.net",
+      "statusCode": 301
+    },
+    {
+      "route": "/signup",
+      "redirect": "https://repolens.acidni.net/signup",
+      "statusCode": 301
+    },
+    {
+      "route": "/login",
+      "redirect": "https://repolens.acidni.net/login",
+      "statusCode": 301
+    },
+    {
+      "route": "/api/*",
+      "redirect": "https://api.repolens.acidni.net/api/*",
+      "statusCode": 301
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "exclude": ["/assets/*", "/api/*"]
+  },
+  "globalHeaders": {
+    "X-Frame-Options": "DENY",
+    "X-Content-Type-Options": "nosniff",
+    "X-XSS-Protection": "1; mode=block",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+  }
+}

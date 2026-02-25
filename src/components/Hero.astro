@@ -1,0 +1,66 @@
+---
+// Hero section for RepoLens
+const stats = [
+  { value: '20+', label: 'Manifest Types' },
+  { value: '95%+', label: 'Detection Accuracy' },
+  { value: '<5 min', label: 'To Understand Any Repo' },
+  { value: '30%', label: 'Faster Infra Reviews' },
+];
+---
+
+<section class="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 py-20 sm:py-28">
+  <!-- Decorative blurs -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary-400/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-500/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <!-- Badge -->
+    <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium mb-8 backdrop-blur-sm">
+      <span class="mr-2">🔍</span>
+      Now supporting 20+ manifest types across CI/CD, IaC, and containers
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight max-w-4xl mx-auto">
+      Manifest-First
+      <span class="text-accent-500"> Code Review</span>
+      for GitHub
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="mt-6 text-lg sm:text-xl text-primary-100 max-w-3xl mx-auto leading-relaxed">
+      Understand any repository in under 5 minutes. RepoLens automatically detects and analyzes
+      CI/CD pipelines, Dockerfiles, Kubernetes configs, IaC templates, and API schemas —
+      so your team reviews infrastructure changes with confidence.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="https://repolens.acidni.net/signup"
+        class="inline-flex items-center px-8 py-3.5 rounded-lg bg-white text-primary-700 font-semibold hover:bg-primary-50 transition-colors shadow-lg hover:shadow-xl text-base"
+      >
+        Get Started Free
+        <svg class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+      <a
+        href="#pricing"
+        class="inline-flex items-center px-8 py-3.5 rounded-lg border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-colors text-base"
+      >
+        View Pricing
+      </a>
+    </div>
+
+    <!-- Social Proof Stats -->
+    <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto">
+      {stats.map((stat) => (
+        <div class="text-center">
+          <div class="text-3xl sm:text-4xl font-bold text-white">{stat.value}</div>
+          <div class="mt-1 text-sm text-primary-200">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Pricing from '../components/Pricing.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="RepoLens — Manifest-First Code Review for GitHub | Acidni LLC"
+  description="Understand any repository in under 5 minutes. RepoLens detects and analyzes CI/CD, container, Kubernetes, IaC, and API manifests with 95%+ accuracy. Free to start."
+>
+  <Header />
+  <main>
+    <Hero />
+    <Features />
+    <Pricing />
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
